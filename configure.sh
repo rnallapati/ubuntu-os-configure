@@ -67,3 +67,9 @@ wget https://download.swift.org/swift-5.7.2-release/ubuntu2204/swift-5.7.2-RELEA
 tar xzf ~/Desktop/swift.tar.gz --directory ~/
 mv ~/swift-5.7.2-RELEASE-ubuntu22.04 ~/swift
 echo "PATH=~/swift/usr/bin:$PATH" >> ~/.zshrc
+
+
+sudo add-apt-repository ppa:maarten-fonville/android-studio
+sudo apt update
+sudo apt install android-studio -y
+
