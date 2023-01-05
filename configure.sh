@@ -1,6 +1,6 @@
 #update and install wget, zsh shell, git, curl and python3
 sudo apt update
-sudo apt install wget zsh git curl python3 -y
+sudo apt install wget zsh git curl python3 default-jdk libgdiplus binutils gnupg2 libc6-dev libcurl4-openssl-dev libedit2 libgcc-9-dev libsqlite3-0 libstdc++-9-dev libxml2-dev libz3-dev pkg-config tzdata unzip zlib1g-dev -y
 
 # Download vs code
 sudo wget -O ~/Desktop/vs_code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-arm64"
@@ -48,5 +48,21 @@ sed -i -e "s/robbyrussell/powerlevel10k\/powerlevel10k/g" ~/.zshrc
 #change shell to zsh
 chsh -s /usr/bin/zsh
 
-#logout
-kill -9 -1
+echo "Please logout"
+
+curl -s https://get.sdkman.io | zsh
+source ~/.sdkman/bin/sdkman-init.sh
+sdk install kotlin
+
+
+wget https://packages.microsoft.com/config/ubuntu/22.10/packages-microsoft-prod.deb -O ~/Desktop/packages-microsoft-prod.deb
+sudo dpkg -i ~/Desktop/packages-microsoft-prod.deb
+rm ~/Desktop/packages-microsoft-prod.deb
+
+sudo apt install -y dotnet-sdk-7.0
+
+# WARNING!!!! FOLLOWING URL NEEDS TO BE UPDATED TO LATEST AVAILABLE VERSION (from swift.org/download/)
+wget https://download.swift.org/swift-5.7.2-release/ubuntu2204/swift-5.7.2-RELEASE/swift-5.7.2-RELEASE-ubuntu22.04.tar.gz -O ~/Desktop/swift.tar.gz
+tar xzf ~/Desktop/swift.tar.gz --directory ~/
+mv ~/swift-5.7.2-RELEASE-ubuntu22.04 ~/swift
+echo "PATH=~/swift/usr/bin:$PATH" >> ~/.zshrc
