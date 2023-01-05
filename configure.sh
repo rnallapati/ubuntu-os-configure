@@ -1,6 +1,7 @@
 #update and install wget, zsh shell, git, curl and python3
 sudo apt update
-sudo apt install wget zsh git curl python3 default-jdk libgdiplus binutils gnupg2 libc6-dev libcurl4-openssl-dev libedit2 libgcc-9-dev libsqlite3-0 libstdc++-9-dev libxml2-dev libz3-dev pkg-config tzdata unzip zlib1g-dev -y
+sudo apt install wget zsh git curl python3 default-jdk libgdiplus binutils gnupg2 libc6-dev python3-lldb-13 libcurl4-openssl-dev libedit2 libgcc-9-dev libsqlite3-0 libstdc++-9-dev libxml2-dev libz3-dev pkg-config tzdata unzip zlib1g-dev -y
+
 
 # Download vs code
 sudo wget -O ~/Desktop/vs_code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-arm64"
