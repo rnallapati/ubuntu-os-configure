@@ -1,10 +1,18 @@
-#update and install wget, zsh shell, git, curl and python3
+
+wget https://packages.microsoft.com/config/ubuntu/22.10/packages-microsoft-prod.deb -O ~/Desktop/packages-microsoft-prod.deb
+sudo dpkg -i ~/Desktop/packages-microsoft-prod.deb
+rm ~/Desktop/packages-microsoft-prod.deb
+
+#update and install wget, zsh shell, git, curl and python3, dotnet, go, nodejs
 sudo apt update
-sudo apt install wget zsh git curl python3 default-jdk libgdiplus binutils gnupg2 libc6-dev python3-lldb-13 libcurl4-openssl-dev libedit2 libgcc-9-dev libsqlite3-0 libstdc++-9-dev libxml2-dev libz3-dev pkg-config tzdata unzip zlib1g-dev -y
+sudo apt upgrade
+sudo apt install wget zsh git curl python3 default-jdk libgdiplus binutils gnupg2 libc6-dev python3-lldb-13 \
+libcurl4-openssl-dev libedit2 libgcc-9-dev libsqlite3-0 libstdc++-9-dev libxml2-dev libz3-dev pkg-config \
+tzdata unzip zlib1g-dev golang-go nodejs dotnet-sdk-7.0 -y
 
 
 # Download vs code
-sudo wget -O ~/Desktop/vs_code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-arm64"
+sudo wget -O ~/Desktop/vs_code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 
 # Install vs code
 sudo dpkg -i ~/Desktop/vs_code.deb
@@ -49,18 +57,18 @@ sed -i -e "s/robbyrussell/powerlevel10k\/powerlevel10k/g" ~/.zshrc
 #change shell to zsh
 chsh -s /usr/bin/zsh
 
-echo "Please logout"
 
 curl -s https://get.sdkman.io | zsh
 source ~/.sdkman/bin/sdkman-init.sh
 sdk install kotlin
 
+code --install-extension ms-dotnettools.csharp
+code --install-extension ms-python.python
+code --install-extension fwcd.kotlin
+code --install-extension Kasik96.swift
+code --install-extension golang.go
+code --install-extension ms-vscode.vscode-typescript-next
 
-wget https://packages.microsoft.com/config/ubuntu/22.10/packages-microsoft-prod.deb -O ~/Desktop/packages-microsoft-prod.deb
-sudo dpkg -i ~/Desktop/packages-microsoft-prod.deb
-rm ~/Desktop/packages-microsoft-prod.deb
-
-sudo apt install -y dotnet-sdk-7.0
 
 # WARNING!!!! FOLLOWING URL NEEDS TO BE UPDATED TO LATEST AVAILABLE VERSION (from swift.org/download/)
 wget https://download.swift.org/swift-5.7.2-release/ubuntu2204/swift-5.7.2-RELEASE/swift-5.7.2-RELEASE-ubuntu22.04.tar.gz -O ~/Desktop/swift.tar.gz
@@ -70,6 +78,5 @@ echo "PATH=~/swift/usr/bin:$PATH" >> ~/.zshrc
 
 
 sudo add-apt-repository ppa:maarten-fonville/android-studio
-sudo apt update
 sudo apt install android-studio -y
 
