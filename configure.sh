@@ -1,14 +1,19 @@
+#Remove CDROM reference
+sudo sed -i '/cdrom/d' /etc/apt/sources.list
+
+#update and install wget, zsh shell, git, curl and python3, dotnet, go, nodejs
+sudo apt update && sudo apt upgrade
+
 
 wget https://packages.microsoft.com/config/ubuntu/22.10/packages-microsoft-prod.deb -O ~/Desktop/packages-microsoft-prod.deb
 sudo dpkg -i ~/Desktop/packages-microsoft-prod.deb
 rm ~/Desktop/packages-microsoft-prod.deb
 
-#update and install wget, zsh shell, git, curl and python3, dotnet, go, nodejs
-sudo apt update
-sudo apt upgrade
+sudo add-apt-repository ppa:maarten-fonville/android-studio -y
+
 sudo apt install wget zsh git curl python3 default-jdk libgdiplus binutils gnupg2 libc6-dev python3-lldb-13 \
 libcurl4-openssl-dev libedit2 libgcc-9-dev libsqlite3-0 libstdc++-9-dev libxml2-dev libz3-dev pkg-config \
-tzdata unzip zlib1g-dev golang-go nodejs dotnet-sdk-7.0 -y
+tzdata unzip zlib1g-dev golang-go nodejs dotnet-sdk-7.0 android-studio -y
 
 
 # Download vs code
@@ -75,8 +80,4 @@ wget https://download.swift.org/swift-5.7.2-release/ubuntu2204/swift-5.7.2-RELEA
 tar xzf ~/Desktop/swift.tar.gz --directory ~/
 mv ~/swift-5.7.2-RELEASE-ubuntu22.04 ~/swift
 echo "PATH=~/swift/usr/bin:$PATH" >> ~/.zshrc
-
-
-sudo add-apt-repository ppa:maarten-fonville/android-studio
-sudo apt install android-studio -y
 
