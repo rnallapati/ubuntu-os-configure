@@ -33,7 +33,7 @@ sudo wget -O ~/Desktop/vs_code.deb "https://code.visualstudio.com/sha/download?b
 
 # Install vs code
 sudo dpkg -i ~/Desktop/vs_code.deb
-rm ~/Desktop/vs_code.deb
+rm -f ~/Desktop/vs_code.deb
 
 code --install-extension ms-dotnettools.csharp
 code --install-extension ms-python.python
