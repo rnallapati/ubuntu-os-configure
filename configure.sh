@@ -13,7 +13,7 @@ sudo add-apt-repository ppa:maarten-fonville/android-studio -y
 
 sudo apt install wget zsh git curl python3 default-jdk libgdiplus binutils gnupg2 libc6-dev python3-lldb-13 \
 libcurl4-openssl-dev libedit2 libgcc-9-dev libsqlite3-0 libstdc++-9-dev libxml2-dev libz3-dev pkg-config \
-tzdata unzip zlib1g-dev golang-go nodejs dotnet-sdk-7.0 android-studio -y
+tzdata unzip zlib1g-dev golang-go nodejs npm dotnet-sdk-7.0 android-studio -y
 
 
 # Download vs code
