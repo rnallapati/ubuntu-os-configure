@@ -16,18 +16,6 @@ libcurl4-openssl-dev libedit2 libgcc-9-dev libsqlite3-0 libstdc++-9-dev libxml2-
 tzdata unzip zlib1g-dev golang-go nodejs npm dotnet-sdk-7.0 android-studio -y
 
 
-curl -s https://get.sdkman.io | bash
-source ~/.sdkman/bin/sdkman-init.sh
-sdk install kotlin
-
-#BEGIN WARNING!!!! FOLLOWING URL NEEDS TO BE UPDATED TO LATEST AVAILABLE VERSION (from swift.org/download/)
-wget https://download.swift.org/swift-5.7.2-release/ubuntu2204/swift-5.7.2-RELEASE/swift-5.7.2-RELEASE-ubuntu22.04.tar.gz -O ~/Desktop/swift.tar.gz
-tar xzf ~/Desktop/swift.tar.gz --directory ~/
-rm ~/Desktop/swift.tar.gz
-mv ~/swift-5.7.2-RELEASE-ubuntu22.04 ~/swift
-echo "PATH=~/swift/usr/bin:$PATH" >> ~/.zshrc
-#END WARNING
-
 # Download vs code
 sudo wget -O ~/Desktop/vs_code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 
@@ -81,5 +69,16 @@ sed -i -e "s/robbyrussell/powerlevel10k\/powerlevel10k/g" ~/.zshrc
 chsh -s /usr/bin/zsh
 
 
+curl -s https://get.sdkman.io | zsh
+source ~/.sdkman/bin/sdkman-init.sh
+sdk install kotlin
+
+#BEGIN WARNING!!!! FOLLOWING URL NEEDS TO BE UPDATED TO LATEST AVAILABLE VERSION (from swift.org/download/)
+wget https://download.swift.org/swift-5.7.2-release/ubuntu2204/swift-5.7.2-RELEASE/swift-5.7.2-RELEASE-ubuntu22.04.tar.gz -O ~/Desktop/swift.tar.gz
+tar xzf ~/Desktop/swift.tar.gz --directory ~/
+rm ~/Desktop/swift.tar.gz
+mv ~/swift-5.7.2-RELEASE-ubuntu22.04 ~/swift
+echo "PATH=~/swift/usr/bin:\$PATH" >> ~/.zshrc
+#END WARNING
 
 
