@@ -16,7 +16,7 @@ libcurl4-openssl-dev libedit2 libgcc-9-dev libsqlite3-0 libstdc++-9-dev libxml2-
 tzdata unzip zlib1g-dev golang-go nodejs npm dotnet-sdk-7.0 android-studio -y
 
 
-curl -s https://get.sdkman.io | zsh
+curl -s https://get.sdkman.io | bash
 source ~/.sdkman/bin/sdkman-init.sh
 sdk install kotlin
 
@@ -51,8 +51,6 @@ sudo wget -O ~/.fonts/MesloLGS\ NF\ Bold.ttf https://github.com/romkatv/powerlev
 sudo wget -O ~/.fonts/MesloLGS\ NF\ Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
 sudo wget -O ~/.fonts/MesloLGS\ NF\ Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 
-# create an empty .zshrc file in home folder
-touch ~/.zshrc
 
 #get the profile id of terminal to a variable
 profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
