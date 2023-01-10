@@ -2,7 +2,7 @@
 sudo sed -i '/cdrom/d' /etc/apt/sources.list
 
 #update and install wget, zsh shell, git, curl and python3, dotnet, go, nodejs
-sudo apt update && sudo apt upgrade
+sudo apt update -y && sudo apt upgrade -y
 
 
 wget https://packages.microsoft.com/config/ubuntu/22.10/packages-microsoft-prod.deb -O ~/Desktop/packages-microsoft-prod.deb
