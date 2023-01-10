@@ -52,10 +52,11 @@ gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/prof
 #turn off the setting that makes the terminal use system font
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-system-font false
 
-#set natural scroll to true... LOL
-gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true
-gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
+#set natural scroll to true... uncomment only if needed
+#gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true
+#gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
 
+touch ~/.zshrc
 #Download and install oh-my-zsh, FINALLY!
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
