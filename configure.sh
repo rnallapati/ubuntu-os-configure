@@ -13,8 +13,12 @@ sudo add-apt-repository ppa:maarten-fonville/android-studio -y
 
 sudo apt install wget zsh git curl python3 default-jdk libgdiplus binutils gnupg2 libc6-dev python3-lldb-13 \
 libcurl4-openssl-dev libedit2 libgcc-9-dev libsqlite3-0 libstdc++-9-dev libxml2-dev libz3-dev pkg-config \
-tzdata unzip zlib1g-dev golang-go nodejs npm dotnet-sdk-7.0 android-studio -y
+tzdata unzip zlib1g-dev golang-go nodejs npm dotnet-sdk-7.0 android-studio uidmap -y
 
+#Docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+dockerd-rootless-setuptool.sh install
 
 # Download vs code
 sudo wget -O ~/Desktop/vs_code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
@@ -53,8 +57,8 @@ gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/prof
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-system-font false
 
 #set natural scroll to true... uncomment only if needed
-#gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true
-#gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
+gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true
+gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
 
 touch ~/.zshrc
 #Download and install oh-my-zsh, FINALLY!
@@ -80,6 +84,7 @@ tar xzf ~/Desktop/swift.tar.gz --directory ~/
 rm ~/Desktop/swift.tar.gz
 mv ~/swift-5.7.2-RELEASE-ubuntu22.04 ~/swift
 echo "PATH=~/swift/usr/bin:\$PATH" >> ~/.zshrc
+echo "export DOCKER_HOST=unix:///run/user/1000/docker.sock" >> ~/.zshrc
 #END WARNING
 
 
